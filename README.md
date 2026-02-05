@@ -1,5 +1,3 @@
----
-
 # Property Portfolio Analytics: SQL JOINS & Window Functions Project
 
 **Course:** Database Development with PL/SQL (INSY 8311) **Instructor:** Eric Maniraguha 
@@ -52,8 +50,6 @@ The system uses three related tables: `properties`, `tenants`, and `payments`.
 ---
 
 ## 4. Part A: SQL JOINS Implementation (Step 4)
-
-*All queries include results and professional business interpretation.* 
 
 ### 1. INNER JOIN (Active Revenue)
 
