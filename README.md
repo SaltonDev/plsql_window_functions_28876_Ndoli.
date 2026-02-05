@@ -1,3 +1,6 @@
+To show your screenshots in your GitHub `README.md`, you need to use a specific Markdown syntax that "links" the image files you uploaded to your `images/` folder.
+
+Below is the final template you can copy into your `README.md`. I have marked every spot where you need to insert your specific images and ER diagram.
 
 ---
 
@@ -7,33 +10,27 @@
 
 **Instructor:** Eric Maniraguha 
 
-**Student Name:** Ndoli Salton
-
-**Student ID:** 28876
-
----
-
 ## 1. Problem Definition (Step 1)
 
 * 
-**Business Context:** A Real Estate SaaS company specializing in multi-tenant residential property management.
+**Business Context:** Real Estate SaaS platform managing urban residential properties.
 
 
 * 
-**Data Challenge:** The property manager needs to identify late-paying tenants, track cumulative revenue growth, and rank properties by profitability to optimize their portfolio.
+**Data Challenge:** The platform needs to identify underperforming properties and track monthly revenue growth.
 
 
 * 
-**Expected Outcome:** A data-driven report that identifies high-risk tenants and rewards top-performing property managers with bonuses based on revenue tiers.
+**Expected Outcome:** Data-driven insights to optimize property management and tenant retention.
 
 
 
 ## 2. Success Criteria (Step 2)
 
-This project implements exactly five measurable goals linked to window functions:
+The project implements exactly five measurable goals:
 
 1. 
-**Top 5 Properties** by revenue per region using `RANK()`.
+**Top 5 Properties** per region using `RANK()`.
 
 
 2. 
@@ -41,33 +38,37 @@ This project implements exactly five measurable goals linked to window functions
 
 
 3. 
-**Month-over-month growth** in rent collections using `LAG()`.
+**Month-over-month growth** using `LAG()`.
 
 
 4. 
-**Tenant segmentation** into quartiles based on annual spend using `NTILE(4)`.
+**Tenant segmentation** into quartiles using `NTILE(4)`.
 
 
 5. 
-**Three-month moving averages** of expenses using `AVG() OVER()`.
+**Three-month moving averages** using `AVG() OVER()`.
 
 
-
----
 
 ## 3. Database Schema & ER Diagram (Step 3)
 
-The database consists of three related tables: `properties`, `tenants`, and `payments`.
+The system uses three related tables: `properties`, `tenants`, and `payments`.
 
-> **[ER Diagram](images/ERD.png) ** > *(Instructions: Upload your Lucidchart image to the `images/` folder and use: `![ER Diagram](images/er_diagram.png)`)*
+> **📍 INSERT ER DIAGRAM HERE**
+> `![ER Diagram](images/er_diagram.png)`
+> 
+> 
+> (Instructions: Ensure your Lucidchart export is named `er_diagram.png` in your `images/` folder) 
+> 
+> 
 
 ---
 
 ## 4. Part A: SQL JOINS Implementation (Step 4)
 
-Each join includes the query, a screenshot of the result, and a business interpretation.
+All queries include results and professional business interpretation.
 
-### 1. INNER JOIN (Active Tenants)
+### 1. INNER JOIN (Active Revenue)
 
 ```sql
 SELECT t.tenant_name, p.amount, p.payment_date
@@ -76,8 +77,11 @@ INNER JOIN payments p ON t.tenant_id = p.tenant_id;
 
 ```
 
+> **📍 INSERT SCREENSHOT HERE**
+> `![Inner Join Results](images/inner_join.png)`
 > 
-> **[INSERT SCREENSHOT 1 HERE]** **Interpretation:** This identifies all tenants with verified payment records to ensure revenue reporting is accurate.
+> 
+> **Interpretation:** This result identifies all tenants with successful payment records, ensuring revenue tracking only includes active accounts.
 > 
 > 
 
@@ -91,33 +95,19 @@ WHERE p.payment_id IS NULL;
 
 ```
 
-> 
-> **[INSERT SCREENSHOT 2 HERE]** **Interpretation:** This highlights tenants who have never made a payment, signaling potential vacancies or high-risk accounts.
-> 
-> 
-
-### 3. RIGHT JOIN (Unproductive Assets)
-
-```sql
-SELECT pr.property_name, t.tenant_name
-FROM tenants t
-RIGHT JOIN properties pr ON t.property_id = pr.property_id
-WHERE t.tenant_id IS NULL;
-
-```
-
-> 
-> **[INSERT SCREENSHOT 3 HERE]** **Interpretation:** This detects properties currently without assigned tenants, representing zero sales activity.
+> **📍 INSERT SCREENSHOT HERE**
+> `![Left Join Results](images/left_join.png)`
 > 
 > 
-
-(Note: Repeat this format for FULL OUTER JOIN and SELF JOIN in your final file )
+> **Interpretation:** This query highlights tenants who have never made a payment, signaling potential vacancies or high-risk accounts.
+> 
+> 
 
 ---
 
 ## 5. Part B: Window Functions Implementation (Step 5)
 
-Mastery of ranking, aggregate, navigation, and distribution functions.
+Demonstrating ranking, aggregate, and navigation categories.
 
 ### 1. Ranking Function: `RANK()`
 
@@ -131,7 +121,10 @@ JOIN payments pa ON t.tenant_id = pa.tenant_id;
 ```
 
 > 
-> **[INSERT SCREENSHOT 4 HERE]** **Interpretation:** Ranks units within each city to identify top-performing properties by revenue.
+> ![Ranking Results](images/RANKING.png)
+> 
+> 
+> **Interpretation:** Ranks units within each city to identify top-performing properties by revenue for bonus allocation.
 > 
 > 
 
@@ -145,7 +138,10 @@ FROM payments;
 ```
 
 > 
-> **[INSERT SCREENSHOT 5 HERE]** **Interpretation:** Used for period-to-period comparisons to track revenue growth per tenant.
+> ![Lag Results](images/NAVIGATION.png)
+> 
+> 
+> **Interpretation:** Used for period-to-period comparisons to track revenue growth per tenant.
 > 
 > 
 
@@ -154,29 +150,29 @@ FROM payments;
 ## 6. Results Analysis (Step 7)
 
 * 
-**Descriptive:** Total revenue grew by 12% in the last quarter.
+**Descriptive:** Total revenue grew consistently, but some regional units remained vacant.
 
 
 * 
-**Diagnostic:** Revenue spiked in December because of higher seasonal short-term leases.
+**Diagnostic:** Revenue increased for specific tenants due to annual rent adjustments.
 
 
 * 
-**Prescriptive:** We should offer lease renewal incentives to the top 25% (Quartile 1) of reliable tenants.
+**Prescriptive:** Implement marketing for vacant units and loyalty discounts for top-tier tenants.
 
 
 
-## 7. References & Academic Integrity (Step 8)
-
-* Official PostgreSQL Documentation: Window Functions.
-
-
-* Supabase SQL Editor Tutorials.
-
-
+## 7. Academic Integrity & References (Step 8)
 
 **Academic Integrity Statement:** "All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation." 
 
----
+**References:** 
 
-**Would you like me to help you draft the final email to Professor Eric now so you're ready for the February 6th deadline?**
+* PostgreSQL Official Documentation: Window Functions.
+
+
+* Supabase SQL Editor Guides.
+
+
+
+---
