@@ -47,7 +47,7 @@ The system uses three related tables: `properties`, `tenants`, and `payments`.
 **
 
 
-[ER Diagram](images/ERD.png)
+![ER Diagram](images/ERD.png)
 
 ---
 
@@ -64,7 +64,7 @@ INNER JOIN payments p ON t.tenant_id = p.tenant_id;
 
 ```
 
-**[ER Diagram](images/INNER-JOIN.png)**
+**![ER Diagram](images/INNER-JOIN.png)**
 
 
 **Interpretation:** This result identifies all tenants with successful payment records, ensuring revenue tracking only includes active accounts.
@@ -79,7 +79,7 @@ WHERE p.payment_id IS NULL;
 
 ```
 
-**[ER Diagram](images/LEFT-JOIN.png)**
+**![ER Diagram](images/LEFT-JOIN.png)**
 
 
 **Interpretation:** This highlights tenants who have never made a payment, signaling potential vacancies or high-risk accounts.
@@ -94,7 +94,7 @@ WHERE t.tenant_id IS NULL;
 
 ```
 
-**[ER Diagram](images/RIGHT-JOIN.png)**
+**![ER Diagram](images/RIGHT-JOIN.png)**
 
 
 **Interpretation:** Detects properties currently without assigned tenants, helping managers focus on filling vacancies.
@@ -108,7 +108,7 @@ FULL OUTER JOIN properties pr ON t.property_id = pr.property_id;
 
 ```
 
-**[ER Diagram](images/FULL-OUTER-JOIN.png)**
+**![ER Diagram](images/FULL-OUTER-JOIN.png)**
 
 
 **Interpretation:** A full audit comparing all system records to ensure data integrity between the tenant list and the property registry.
@@ -122,7 +122,7 @@ JOIN properties b ON a.city = b.city AND a.property_id <> b.property_id;
 
 ```
 
-**[ER Diagram](images/SELF-JOIN.png)**
+**![ER Diagram](images/SELF-JOIN.png)**
 
 
 **Interpretation:** Compares different properties within the same city to allow for regional performance benchmarking.
@@ -144,7 +144,7 @@ JOIN payments pa ON t.tenant_id = pa.tenant_id;
 
 ```
 
-**[ER Diagram](images/RANKING.png)**
+**![ER Diagram](images/RANKING.png)**
 
 
 **Interpretation:** Ranks units within each city to identify top-performing properties by revenue for bonus allocation.
@@ -172,7 +172,7 @@ FROM payments;
 
 ```
 
-**[ER Diagram](images/NAVIGATION.png)**
+**![ER Diagram](images/NAVIGATION.png)**
 
 
 **Interpretation:** Used for period-to-period comparisons to track revenue growth and payment consistency per tenant.
@@ -186,7 +186,7 @@ FROM payments;
 
 ```
 
-**[ER Diagram](images/DISTRIBUTION.png)**
+**![ER Diagram](images/DISTRIBUTION.png)**
 
 
 **Interpretation:** Segments tenants into four quartiles based on their total spend to identify the most valuable customers.
