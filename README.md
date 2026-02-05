@@ -46,9 +46,6 @@ The system uses three related tables: `properties`, `tenants`, and `payments`.
 
 ![ER Diagram](images/ERD.png)
 
-Database Management System: PostgreSQL.
-
-
 ### Database Environment
 
 DBMS: PostgreSQL.
