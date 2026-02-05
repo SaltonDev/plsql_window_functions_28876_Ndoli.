@@ -1,6 +1,7 @@
 # Property Portfolio Analytics: SQL JOINS & Window Functions Project
 
-**Course:** Database Development with PL/SQL (INSY 8311) **Instructor:** Eric Maniraguha 
+**Course:** Database Development with PL/SQL (INSY 8311)
+**Instructor:** Eric Maniraguha 
 **Student Name:** Ndoli Salton
 **Student ID:** 28876
 
