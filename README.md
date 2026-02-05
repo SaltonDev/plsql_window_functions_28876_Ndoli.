@@ -9,13 +9,13 @@
 
 ## 1. Problem Definition (Step 1)
 
-* **Business Context:** Real Estate SaaS platform managing urban residential properties.
+* **Business Context:** I am building a property management system designed to help landlords in Rwanda track residential complexes across different cities like Kigali and Musanze.
 
 
-* **Data Challenge:** The platform needs to identify underperforming properties and track monthly revenue growth through multi-table relational analysis.
+* **Data Challenge:** Currently, it is difficult to see which properties are actually making money versus which ones are sitting empty. We need a way to link tenant payments back to specific buildings and track how that revenue changes month-to-month.
 
 
-* **Expected Outcome:** Data-driven insights to optimize property management and improve tenant retention.
+* **Expected Outcome:** By the end of this analysis, I expect to have a clear list of our top-performing properties and a better understanding of which tenants are our most reliable "VIPs" so we can offer them renewal incentives.
 
 
 
@@ -192,13 +192,13 @@ FROM payments;
 
 ## 6. Results Analysis (Step 7)
 
-* **Descriptive (What happened?):** Total revenue grew consistently across the Kigali region, though Rubavu showed higher vacancy rates.
+* **Descriptive (What happened?):** Looking at the results, the properties in Kigali are consistently outperforming those in Rubavu. Our total revenue has a steady upward trend, especially in our high-end units, but we have a clear vacancy issue in our smaller properties.
 
 
-* **Diagnostic (Why?):** Revenue increased for specific tenants due to scheduled annual rent adjustments, while some properties lacked sales activity.
+* **Diagnostic (Why?):** The reason Kigali is doing so well is that we implemented annual 10% rent adjustments for long-term tenants. On the other hand, the high vacancy in Rubavu seems to be caused by a lack of assigned tenants in our database, which showed up clearly in the RIGHT JOIN query.
 
 
-* **Prescriptive (What next?):** Implement aggressive marketing for vacant units and offer loyalty discounts for tenants in the top 25% (Tier 1).
+* **Prescriptive (What next?):** We should definitely start a new marketing campaign specifically for the Rubavu units to fill those empty spots. Also, using the NTILE(4) results, we should reach out to our "Quartile 1" tenants—our highest spenders—and offer them a 5% discount if they sign a two-year lease extension.
 
 
 
