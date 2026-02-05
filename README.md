@@ -43,14 +43,19 @@ The project implements exactly five measurable goals:
 
 The system uses three related tables: `properties`, `tenants`, and `payments`.
 
-**
-
 
 ![ER Diagram](images/ERD.png)
 
 Database Management System: PostgreSQL.
 
-Platform: Supabase (Cloud-hosted PostgreSQL instance).
+
+### Database Environment
+
+DBMS: PostgreSQL.
+
+Hosting Platform: [Supabase](https://supabase.com/) (Cloud-hosted PostgreSQL instance).
+
+Connection Type: Cloud-hosted SQL Editor.
 
 ---
 
