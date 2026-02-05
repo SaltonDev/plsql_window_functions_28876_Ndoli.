@@ -1,6 +1,4 @@
-To show your screenshots in your GitHub `README.md`, you need to use a specific Markdown syntax that "links" the image files you uploaded to your `images/` folder.
 
-Below is the final template you can copy into your `README.md`. I have marked every spot where you need to insert your specific images and ER diagram.
 
 ---
 
@@ -12,12 +10,10 @@ Below is the final template you can copy into your `README.md`. I have marked ev
 
 ## 1. Problem Definition (Step 1)
 
-* 
-**Business Context:** Real Estate SaaS platform managing urban residential properties.
+* **Business Context:** Real Estate SaaS platform managing urban residential properties.
 
 
-* 
-**Data Challenge:** The platform needs to identify underperforming properties and track monthly revenue growth.
+* **Data Challenge:** The platform needs to identify underperforming properties and track monthly revenue growth.
 
 
 * 
@@ -54,11 +50,11 @@ The project implements exactly five measurable goals:
 
 The system uses three related tables: `properties`, `tenants`, and `payments`.
 
-> **📍 INSERT ER DIAGRAM HERE**
-> `![ER Diagram](images/er_diagram.png)`
+> 
+> ![ER Diagram](images/ERD.png)
 > 
 > 
-> (Instructions: Ensure your Lucidchart export is named `er_diagram.png` in your `images/` folder) 
+> 
 > 
 > 
 
@@ -78,7 +74,7 @@ INNER JOIN payments p ON t.tenant_id = p.tenant_id;
 ```
 
 > **📍 INSERT SCREENSHOT HERE**
-> `![Inner Join Results](images/inner_join.png)`
+> ![Inner Join Results](images/INNER-JOIN.png)
 > 
 > 
 > **Interpretation:** This result identifies all tenants with successful payment records, ensuring revenue tracking only includes active accounts.
@@ -95,8 +91,8 @@ WHERE p.payment_id IS NULL;
 
 ```
 
-> **📍 INSERT SCREENSHOT HERE**
-> `![Left Join Results](images/left_join.png)`
+> 
+> ![Left Join Results](images/LEFT-JOIN.png)
 > 
 > 
 > **Interpretation:** This query highlights tenants who have never made a payment, signaling potential vacancies or high-risk accounts.
@@ -149,16 +145,13 @@ FROM payments;
 
 ## 6. Results Analysis (Step 7)
 
-* 
-**Descriptive:** Total revenue grew consistently, but some regional units remained vacant.
+* **Descriptive:** Total revenue grew consistently, but some regional units remained vacant.
 
 
-* 
-**Diagnostic:** Revenue increased for specific tenants due to annual rent adjustments.
+* **Diagnostic:** Revenue increased for specific tenants due to annual rent adjustments.
 
 
-* 
-**Prescriptive:** Implement marketing for vacant units and loyalty discounts for top-tier tenants.
+* **Prescriptive:** Implement marketing for vacant units and loyalty discounts for top-tier tenants.
 
 
 
