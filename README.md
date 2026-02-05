@@ -48,6 +48,10 @@ The system uses three related tables: `properties`, `tenants`, and `payments`.
 
 ![ER Diagram](images/ERD.png)
 
+Database Management System: PostgreSQL.
+
+Platform: Supabase (Cloud-hosted PostgreSQL instance).
+
 ---
 
 ## 4. Part A: SQL JOINS Implementation (Step 4)
@@ -206,12 +210,16 @@ FROM payments;
 
 **Academic Integrity Statement:** "All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation." 
 
-**References:** 
-
-* PostgreSQL Official Documentation: Window Functions.
+References:
 
 
-* Supabase SQL Editor Tutorials.
+* Official Documentation: PostgreSQL Window Functions Documentation.
+
+
+* Tooling Documentation: Supabase SQL Editor and Table Management Guides.
+
+
+* Formatting Assistance: AI collaboration was used for Markdown structure and YAML troubleshooting to ensure professional documentation standards.
 
 
 
